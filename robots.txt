@@ -1,0 +1,13 @@
+# robots.txt for Elijah Rob B. Masangkay Portfolio
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://elijahmasangkay.dev/sitemap.xml
+
+# Disallow admin/private areas (if any)
+Disallow: /admin/
+Disallow: /private/
+
+# Crawl-delay (optional)
+Crawl-delay: 1
