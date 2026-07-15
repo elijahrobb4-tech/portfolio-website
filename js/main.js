@@ -5,6 +5,7 @@ function initMain() {
     initBackToTop();
     initImageFallback();
     initStatsCounter();
+    initFAQ();
 }
 
 function initNavigation() {
@@ -129,14 +130,14 @@ function initImageFallback() {
                 width: 100%;
                 height: 100%;
                 min-height: 150px;
-                background: var(--bg-secondary);
-                border: 1px dashed var(--border);
+                background: var(--bg-surface);
+                border: 1px dashed var(--border-subtle);
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 font-family: var(--font-mono);
                 font-size: 0.75rem;
-                color: var(--text-secondary);
+                color: var(--text-muted);
             `;
             fallback.textContent = this.alt || 'Image not available';
             this.parentNode.insertBefore(fallback, this);
@@ -185,6 +186,29 @@ function initStatsCounter() {
     if (statsSection) {
         statsObserver.observe(statsSection);
     }
+}
+
+function initFAQ() {
+    const faqItems = document.querySelectorAll('.faq__item');
+
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq__question');
+        const answer = item.querySelector('.faq__answer');
+
+        question.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+
+            faqItems.forEach(otherItem => {
+                otherItem.classList.remove('active');
+                otherItem.querySelector('.faq__question').setAttribute('aria-expanded', 'false');
+            });
+
+            if (!isActive) {
+                item.classList.add('active');
+                question.setAttribute('aria-expanded', 'true');
+            }
+        });
+    });
 }
 
 document.addEventListener('DOMContentLoaded', initMain);

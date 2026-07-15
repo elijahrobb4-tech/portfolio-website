@@ -1,8 +1,15 @@
+/* ===== Gradient Shift Animation ===== */
+@keyframes gradientShift {
+    0% { background-position: 0% center; }
+    50% { background-position: 100% center; }
+    100% { background-position: 0% center; }
+}
+
 /* ===== Scroll Reveal Animations ===== */
 .reveal-up {
     opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
 .reveal-up.revealed {
@@ -28,17 +35,16 @@
 .reveal-up:nth-child(5) { transition-delay: 0.4s; }
 
 .reveal-text:nth-child(1) { transition-delay: 0.1s; }
-.reveal-text:nth-child(2) { transition-delay: 0.2s; }
-.reveal-text:nth-child(3) { transition-delay: 0.3s; }
-.reveal-text:nth-child(4) { transition-delay: 0.4s; }
-.reveal-text:nth-child(5) { transition-delay: 0.5s; }
-.reveal-text:nth-child(6) { transition-delay: 0.6s; }
+.reveal-text:nth-child(2) { transition-delay: 0.3s; }
+.reveal-text:nth-child(3) { transition-delay: 0.5s; }
+.reveal-text:nth-child(4) { transition-delay: 0.7s; }
+.reveal-text:nth-child(5) { transition-delay: 0.9s; }
 
 /* ===== Skill Tags Animation ===== */
 .skill-tag {
     opacity: 0;
-    transform: translateY(15px) scale(0.9);
-    transition: opacity 0.4s ease, transform 0.4s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    transform: translateY(12px) scale(0.95);
+    transition: opacity 0.4s ease, transform 0.4s ease, border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
 }
 
 .skill-tag.revealed {
@@ -55,11 +61,13 @@
 .skill-tag:nth-child(6) { transition-delay: 0.3s; }
 .skill-tag:nth-child(7) { transition-delay: 0.35s; }
 .skill-tag:nth-child(8) { transition-delay: 0.4s; }
+.skill-tag:nth-child(9) { transition-delay: 0.45s; }
+.skill-tag:nth-child(10) { transition-delay: 0.5s; }
 
 /* ===== Project Card Animation ===== */
 .project-card {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(25px);
     transition: opacity 0.6s ease, transform 0.6s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -74,66 +82,53 @@
 .project-card:nth-child(4) { transition-delay: 0.4s; }
 
 /* ===== Hero Animations ===== */
-.hero__status {
-    animation: glitch 2s ease-in-out infinite, fadeInUp 0.8s ease forwards;
-    animation-delay: 0.1s, 0.1s;
-    opacity: 0;
-}
-
 .hero__greeting {
     animation: fadeInUp 0.8s ease forwards;
-    animation-delay: 0.3s;
+    animation-delay: 0.2s;
     opacity: 0;
 }
 
 .hero__name {
     animation: fadeInUp 0.8s ease forwards;
-    animation-delay: 0.5s;
+    animation-delay: 0.4s;
     opacity: 0;
 }
 
 .hero__tagline {
     animation: fadeInUp 0.8s ease forwards;
-    animation-delay: 0.7s;
+    animation-delay: 0.6s;
     opacity: 0;
 }
 
 .hero__location {
     animation: fadeInUp 0.8s ease forwards;
-    animation-delay: 0.9s;
+    animation-delay: 0.8s;
     opacity: 0;
 }
 
 .hero__cta {
     animation: fadeInUp 0.8s ease forwards;
-    animation-delay: 1.1s;
+    animation-delay: 1s;
     opacity: 0;
 }
 
 .hero__scroll-indicator {
     animation: fadeIn 1s ease forwards;
-    animation-delay: 1.5s;
+    animation-delay: 1.4s;
     opacity: 0;
 }
 
-/* ===== Scroll Line Animation ===== */
-@keyframes scrollPulse {
-    0%, 100% {
-        opacity: 0.3;
-        transform: scaleY(0.6);
-        transform-origin: top;
-    }
-    50% {
-        opacity: 1;
-        transform: scaleY(1);
-    }
+/* ===== Scroll Bounce Animation ===== */
+@keyframes scrollBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
 }
 
 /* ===== Keyframes ===== */
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(25px);
     }
     to {
         opacity: 1;
@@ -142,57 +137,25 @@
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-@keyframes heroPulse {
+/* ===== Timeline Marker Pulse ===== */
+@keyframes markerPulse {
     0%, 100% {
-        transform: scale(1);
-        opacity: 0.3;
+        box-shadow: 0 0 5px rgba(0, 229, 255, 0.3);
     }
     50% {
-        transform: scale(1.05);
-        opacity: 0.5;
-    }
-}
-
-@keyframes glitch {
-    0%, 90%, 100% {
-        opacity: 1;
-    }
-    91% {
-        opacity: 0.8;
-        transform: translateX(-2px);
-    }
-    93% {
-        opacity: 0.6;
-        transform: translateX(2px);
-    }
-    95% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes glowPulse {
-    0%, 100% {
-        box-shadow: 0 0 5px rgba(0, 229, 255, 0.2);
-    }
-    50% {
-        box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
+        box-shadow: 0 0 15px rgba(0, 229, 255, 0.6);
     }
 }
 
 /* ===== Tag Animation ===== */
 .tag {
     opacity: 0;
-    transform: scale(0.8);
-    transition: opacity 0.4s ease, transform 0.4s ease;
+    transform: scale(0.9);
+    transition: opacity 0.4s ease, transform 0.4s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .tag.revealed {
@@ -208,8 +171,8 @@
 /* ===== Social Link Animation ===== */
 .social-link {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.4s ease, transform 0.4s ease, background 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    transform: translateY(15px);
+    transition: opacity 0.4s ease, transform 0.4s ease, border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
 }
 
 .social-link.revealed {
@@ -226,7 +189,7 @@
 /* ===== Certification Badge Animation ===== */
 .cert-badge {
     opacity: 0;
-    transform: scale(0.8) translateY(20px);
+    transform: scale(0.9) translateY(15px);
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
@@ -242,12 +205,15 @@
 .cert-badge:nth-child(5) { transition-delay: 0.25s; }
 .cert-badge:nth-child(6) { transition-delay: 0.3s; }
 .cert-badge:nth-child(7) { transition-delay: 0.35s; }
+.cert-badge:nth-child(8) { transition-delay: 0.4s; }
+.cert-badge:nth-child(9) { transition-delay: 0.45s; }
+.cert-badge:nth-child(10) { transition-delay: 0.5s; }
 
 /* ===== FAQ Animation ===== */
 .faq__item {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    transform: translateY(15px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .faq__item.revealed {
@@ -260,27 +226,23 @@
 .faq__item:nth-child(3) { transition-delay: 0.2s; }
 .faq__item:nth-child(4) { transition-delay: 0.25s; }
 
-/* ===== Section Divider Animation ===== */
-.section-divider {
-    opacity: 0;
-    transition: opacity 0.6s ease;
-}
-
-.section-divider.revealed {
-    opacity: 1;
-}
-
-/* ===== HUD Corner Animation ===== */
-@keyframes cornerGlow {
-    0%, 100% {
-        opacity: 0.3;
+/* ===== Reduced Motion ===== */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
-    50% {
-        opacity: 0.6;
-    }
-}
 
-/* ===== Glow Pulse on Hover ===== */
-.project-card:hover {
-    animation: glowPulse 2s ease-in-out infinite;
+    .reveal-up,
+    .reveal-text,
+    .skill-tag,
+    .project-card,
+    .tag,
+    .social-link,
+    .cert-badge,
+    .faq__item {
+        opacity: 1;
+        transform: none;
+    }
 }

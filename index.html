@@ -29,7 +29,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
@@ -125,17 +125,6 @@
     <!-- Skip to Content (Accessibility) -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- Google Analytics (Add your Measurement ID) -->
-    <!--
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'GA_MEASUREMENT_ID');
-    </script>
-    -->
-
     <nav class="nav" id="nav">
         <div class="nav__logo">{ elijah }</div>
         <div class="nav__links">
@@ -155,11 +144,11 @@
 
     <main id="main-content">
     <header class="hero" id="hero">
+        <canvas class="hero__canvas" id="hero-canvas"></canvas>
         <div class="hero__content">
-            <p class="hero__status reveal-text">[ SYS.STATUS: ONLINE ]</p>
-            <p class="hero__greeting reveal-text">Hello, I'm</p>
+            <p class="hero__greeting reveal-text">Full-Stack Developer &amp; Designer</p>
             <h1 class="hero__name reveal-text">Elijah Rob B. Masangkay</h1>
-            <h2 class="hero__tagline reveal-text">Full-Stack Developer <span class="accent">&</span> Designer</h2>
+            <p class="hero__tagline reveal-text">Building modern web experiences with clean code and thoughtful design</p>
             <p class="hero__location reveal-text">
                 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
@@ -171,7 +160,9 @@
         </div>
         <div class="hero__scroll-indicator">
             <span>Scroll</span>
-            <div class="scroll-line"></div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 9l6 6 6-6"/>
+            </svg>
         </div>
     </header>
 
@@ -201,11 +192,6 @@
 
     <section class="section about" id="about">
         <div class="container">
-            <div class="section-divider">
-                <div class="section-divider__line"></div>
-                <span class="section-divider__label">// About</span>
-                <div class="section-divider__line"></div>
-            </div>
             <h2 class="section__title reveal-up">About Me</h2>
             <div class="about__grid">
                 <div class="about__image-wrapper reveal-up">
@@ -231,11 +217,6 @@
     <!-- Experience Timeline -->
     <section class="section experience" id="experience">
         <div class="container">
-            <div class="section-divider">
-                <div class="section-divider__line"></div>
-                <span class="section-divider__label">// Experience</span>
-                <div class="section-divider__line"></div>
-            </div>
             <h2 class="section__title reveal-up">Experience & Education</h2>
             <div class="timeline">
                 <div class="timeline__item reveal-up">
@@ -287,11 +268,6 @@
 
     <section class="section projects" id="projects">
         <div class="container">
-            <div class="section-divider">
-                <div class="section-divider__line"></div>
-                <span class="section-divider__label">// Projects</span>
-                <div class="section-divider__line"></div>
-            </div>
             <h2 class="section__title reveal-up">Featured Projects</h2>
             <p class="section__subtitle reveal-up">A selection of my recent work</p>
             <div class="projects__grid" id="projects-grid">
@@ -302,11 +278,6 @@
 
     <section class="section skills" id="skills">
         <div class="container">
-            <div class="section-divider">
-                <div class="section-divider__line"></div>
-                <span class="section-divider__label">// Skills</span>
-                <div class="section-divider__line"></div>
-            </div>
             <h2 class="section__title reveal-up">Skills & Technologies</h2>
             <div class="skills__grid">
                 <div class="skills__category reveal-up">
@@ -316,12 +287,17 @@
                         <span class="skill-tag">Java</span>
                         <span class="skill-tag">SQL</span>
                         <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">C#.NET</span>
                     </div>
                 </div>
                 <div class="skills__category reveal-up">
                     <h3 class="skills__category-title">Frameworks & Tools</h3>
                     <div class="skills__tags">
                         <span class="skill-tag">Symfony</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Next.js</span>
                         <span class="skill-tag">Tailwind CSS</span>
                         <span class="skill-tag">PostgreSQL</span>
                         <span class="skill-tag">Git/GitLab</span>
@@ -345,6 +321,12 @@
                         <span class="skill-tag">Team Leadership</span>
                     </div>
                 </div>
+                <div class="skills__category reveal-up">
+                    <h3 class="skills__category-title">AI & Tools</h3>
+                    <div class="skills__tags">
+                        <span class="skill-tag">AI-Assisted Development</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -352,11 +334,6 @@
     <!-- Services -->
     <section class="section services" id="services">
         <div class="container">
-            <div class="section-divider">
-                <div class="section-divider__line"></div>
-                <span class="section-divider__label">// Services</span>
-                <div class="section-divider__line"></div>
-            </div>
             <h2 class="section__title reveal-up">What I Offer</h2>
             <p class="section__subtitle reveal-up">Specialized services tailored to your needs</p>
             <div class="services__grid">
@@ -427,33 +404,67 @@
 
     <section class="section certifications" id="certifications">
         <div class="container">
-            <div class="section-divider">
-                <div class="section-divider__line"></div>
-                <span class="section-divider__label">// Certifications</span>
-                <div class="section-divider__line"></div>
-            </div>
             <h2 class="section__title reveal-up">Certifications</h2>
             <div class="certifications__grid">
                 <div class="cert-badge reveal-up">
-                    <img src="assets/icons/it-specialist-software-development.png" alt="IT Specialist - Software Development">
+                    <div class="cert-badge__image">
+                        <img src="assets/icons/it-specialist-software-development.png" alt="IT Specialist - Software Development">
+                    </div>
+                    <span class="cert-badge__name">Software Development</span>
                 </div>
                 <div class="cert-badge reveal-up">
-                    <img src="assets/icons/it-specialist-cybersecurity.png" alt="IT Specialist - Cybersecurity">
+                    <div class="cert-badge__image">
+                        <img src="assets/icons/it-specialist-cybersecurity.png" alt="IT Specialist - Cybersecurity">
+                    </div>
+                    <span class="cert-badge__name">Cybersecurity</span>
                 </div>
                 <div class="cert-badge reveal-up">
-                    <img src="assets/icons/it-specialist-network-security.png" alt="IT Specialist - Network Security">
+                    <div class="cert-badge__image">
+                        <img src="assets/icons/it-specialist-network-security.png" alt="IT Specialist - Network Security">
+                    </div>
+                    <span class="cert-badge__name">Network Security</span>
                 </div>
                 <div class="cert-badge reveal-up">
-                    <img src="assets/icons/it-specialist-device-configuration-and-management.png" alt="IT Specialist - Device Configuration and Management">
+                    <div class="cert-badge__image">
+                        <img src="assets/icons/it-specialist-device-configuration-and-management.png" alt="IT Specialist - Device Configuration and Management">
+                    </div>
+                    <span class="cert-badge__name">Device Configuration</span>
                 </div>
                 <div class="cert-badge reveal-up">
-                    <img src="assets/icons/ic3-digital-literacy-certification-gs6-level-1.png" alt="IC3 Digital Literacy Certification">
+                    <div class="cert-badge__image">
+                        <img src="assets/icons/ic3-digital-literacy-certification-gs6-level-1.png" alt="IC3 Digital Literacy Certification">
+                    </div>
+                    <span class="cert-badge__name">IC3 Digital Literacy</span>
                 </div>
                 <div class="cert-badge reveal-up">
-                    <img src="assets/icons/pmi-project-management-ready.png" alt="PMI Project Management Ready">
+                    <div class="cert-badge__image">
+                        <img src="assets/icons/pmi-project-management-ready.png" alt="PMI Project Management Ready">
+                    </div>
+                    <span class="cert-badge__name">Project Management</span>
                 </div>
                 <div class="cert-badge reveal-up">
-                    <img src="assets/icons/microsoft-office-specialist-associate-microsoft-365-apps.png" alt="Microsoft Office Specialist">
+                    <div class="cert-badge__image">
+                        <img src="assets/icons/microsoft-office-specialist-associate-microsoft-365-apps.png" alt="Microsoft Office Specialist">
+                    </div>
+                    <span class="cert-badge__name">Microsoft Office Specialist</span>
+                </div>
+                <div class="cert-badge reveal-up">
+                    <div class="cert-badge__image">
+                        <img src="assets/icons/microsoft-office-specialist-word-associate-microsoft-365-apps.png" alt="Microsoft Office Word Associate">
+                    </div>
+                    <span class="cert-badge__name">Word Associate</span>
+                </div>
+                <div class="cert-badge reveal-up">
+                    <div class="cert-badge__image">
+                        <img src="assets/icons/microsoft-office-specialist-powerpoint-associate-microsoft-365-apps.png" alt="Microsoft Office PowerPoint Associate">
+                    </div>
+                    <span class="cert-badge__name">PowerPoint Associate</span>
+                </div>
+                <div class="cert-badge reveal-up">
+                    <div class="cert-badge__image">
+                        <img src="assets/icons/microsoft-office-specialist-excel-associate-microsoft-365-apps.png" alt="Microsoft Office Excel Associate">
+                    </div>
+                    <span class="cert-badge__name">Excel Associate</span>
                 </div>
             </div>
         </div>
@@ -461,44 +472,75 @@
 
     <section class="section faq" id="faq" aria-label="Frequently Asked Questions">
         <div class="container">
-            <div class="section-divider">
-                <div class="section-divider__line"></div>
-                <span class="section-divider__label">// FAQ</span>
-                <div class="section-divider__line"></div>
-            </div>
             <h2 class="section__title reveal-up">Frequently Asked Questions</h2>
-            <div class="faq__grid">
-                <article class="faq__item reveal-up">
-                    <h3 class="faq__question">What does Elijah do?</h3>
-                    <p class="faq__answer">Elijah Rob B. Masangkay is a Full-Stack Developer and UI/UX Designer specializing in PHP, Symfony, React, Next.js, and modern web applications. He also has expertise in QA testing, business analysis, and cybersecurity.</p>
-                </article>
-                <article class="faq__item reveal-up">
-                    <h3 class="faq__question">What tech stack does Elijah use?</h3>
-                    <p class="faq__answer">Elijah works with PHP, Symfony, React, Next.js, Tailwind CSS, PostgreSQL, and Git/GitLab. He also has experience with Java, SQL, and various QA testing tools.</p>
-                </article>
-                <article class="faq__item reveal-up">
-                    <h3 class="faq__question">Where is Elijah located?</h3>
-                    <p class="faq__answer">Elijah is based in Balanga City, Bataan, Philippines. He is available for remote work and can be contacted via email or phone.</p>
-                </article>
-                <article class="faq__item reveal-up">
-                    <h3 class="faq__question">How can I contact Elijah?</h3>
-                    <p class="faq__answer">You can reach Elijah via email at elijahrobb4@gmail.com, by phone at +63 969 460 6389, or through his social media profiles on Facebook, X, Instagram, LinkedIn, and Credly.</p>
-                </article>
+            <div class="faq__list">
+                <div class="faq__item reveal-up">
+                    <button class="faq__question" aria-expanded="false">
+                        What does Elijah do?
+                        <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"/>
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                        </svg>
+                    </button>
+                    <div class="faq__answer">
+                        <div class="faq__answer-inner">
+                            Elijah Rob B. Masangkay is a Full-Stack Developer and UI/UX Designer specializing in PHP, Symfony, React, Next.js, and modern web applications. He also has expertise in QA testing, business analysis, and cybersecurity.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq__item reveal-up">
+                    <button class="faq__question" aria-expanded="false">
+                        What tech stack does Elijah use?
+                        <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"/>
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                        </svg>
+                    </button>
+                    <div class="faq__answer">
+                        <div class="faq__answer-inner">
+                            Elijah works with PHP, Symfony, React, Next.js, Tailwind CSS, PostgreSQL, and Git/GitLab. He also has experience with Java, SQL, and various QA testing tools.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq__item reveal-up">
+                    <button class="faq__question" aria-expanded="false">
+                        Where is Elijah located?
+                        <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"/>
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                        </svg>
+                    </button>
+                    <div class="faq__answer">
+                        <div class="faq__answer-inner">
+                            Elijah is based in Balanga City, Bataan, Philippines. He is available for remote work and can be contacted via email or phone.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq__item reveal-up">
+                    <button class="faq__question" aria-expanded="false">
+                        How can I contact Elijah?
+                        <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"/>
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                        </svg>
+                    </button>
+                    <div class="faq__answer">
+                        <div class="faq__answer-inner">
+                            You can reach Elijah via email at elijahrobb4@gmail.com, by phone at +63 969 460 6389, or through his social media profiles on Facebook, X, Instagram, LinkedIn, and Credly.
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="section contact" id="contact" aria-label="Contact">
         <div class="container">
-            <div class="section-divider">
-                <div class="section-divider__line"></div>
-                <span class="section-divider__label">// Contact</span>
-                <div class="section-divider__line"></div>
-            </div>
             <h2 class="section__title reveal-up">Get In Touch</h2>
             <p class="section__subtitle reveal-up">Let's build something great together</p>
             <div class="contact__grid">
                 <div class="contact__info reveal-up">
+                    <h3 class="contact__heading">Let's work<br><span class="accent">together.</span></h3>
                     <a href="mailto:elijahrobb4@gmail.com" class="contact__item">
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
@@ -564,6 +606,7 @@
     </footer>
 
     <script src="data/projects.js"></script>
+    <script src="js/particles.js"></script>
     <script src="js/scroll-animations.js"></script>
     <script src="js/main.js"></script>
 </body>
